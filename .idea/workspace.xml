@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c9fe9dea-3250-4053-9d9d-c463450f55d4" name="Default Changelist" comment="initial commit">
+      <change afterPath="$PROJECT_DIR$/.idea/experiment.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connect.php" beforeDir="false" afterPath="$PROJECT_DIR$/connect.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/delete.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/listing.php" beforeDir="false" afterPath="$PROJECT_DIR$/listing.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1WKIB9Gfvz0VgTq1ebyTlwoBdor" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../saral-vastu-theme/wp-settings.php" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c9fe9dea-3250-4053-9d9d-c463450f55d4" name="Default Changelist" comment="" />
+      <created>1578891721643</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1578891721643</updated>
+      <workItem from="1578891723314" duration="14864000" />
+      <workItem from="1578976418713" duration="8092000" />
+    </task>
+    <task id="LOCAL-00001" summary="initial commit">
+      <created>1578901835821</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1578901835821</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="309" y="59" width="860" height="807" key="CommitChangelistDialog2" timestamp="1578909522345">
+      <screen x="49" y="27" width="1391" height="873" />
+    </state>
+    <state x="309" y="59" width="860" height="807" key="CommitChangelistDialog2/49.27.1391.873@49.27.1391.873" timestamp="1578909522345" />
+    <state x="527" y="220" width="424" height="484" key="FileChooserDialogImpl" timestamp="1578986741796">
+      <screen x="49" y="27" width="1391" height="873" />
+    </state>
+    <state x="527" y="220" width="424" height="484" key="FileChooserDialogImpl/49.27.1391.873@49.27.1391.873" timestamp="1578986741796" />
+    <state x="540" y="388" width="399" height="149" key="NewPhpFileDialog" timestamp="1578986838046">
+      <screen x="49" y="27" width="1391" height="873" />
+    </state>
+    <state x="540" y="388" width="399" height="149" key="NewPhpFileDialog/49.27.1391.873@49.27.1391.873" timestamp="1578986838046" />
+    <state x="233" y="97" key="SettingsEditor" timestamp="1578891728657">
+      <screen x="49" y="27" width="1391" height="873" />
+    </state>
+    <state x="233" y="97" key="SettingsEditor/49.27.1391.873@49.27.1391.873" timestamp="1578891728657" />
+    <state x="339" y="198" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1578918289167">
+      <screen x="49" y="27" width="1391" height="873" />
+    </state>
+    <state x="339" y="198" width="800" height="528" key="Vcs.Push.Dialog.v2/49.27.1391.873@49.27.1391.873" timestamp="1578918289167" />
+    <state x="0" y="27" width="868" height="873" key="find.popup" timestamp="1578985662883">
+      <screen x="49" y="27" width="1391" height="873" />
+    </state>
+    <state x="0" y="27" width="868" height="873" key="find.popup/49.27.1391.873@49.27.1391.873" timestamp="1578985662883" />
+  </component>
+</project>

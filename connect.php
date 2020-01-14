@@ -5,10 +5,10 @@ $contact=$_POST['contact'];
 $address=$_POST['address'];
 
 
-$con=mysqli_connect("localhost","admin","password","detail");
+require 'config.php';
 
 if($con === false){
-    die("ERROR: Could not connect. " . mysqli_connect_error());
+   // die("ERROR: Could not connect. " . mysqli_connect_error());
 }
 
 $q="INSERT INTO information (name, email,contact,address) VALUES ('$name', '$email', '$contact','$address')";
@@ -19,7 +19,7 @@ if(mysqli_query($con, $q)){
 }
 else
 {
-    echo "ERROR: Could not able to execute $q. " . mysqli_error($con);
+   // echo "ERROR: Could not able to execute $q. " . mysqli_error($con);
 }
 mysqli_close($con);
 

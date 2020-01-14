@@ -4,7 +4,7 @@
 $id=$_GET['id'];
 
 //2
-$con=mysqli_connect("localhost","admin","password","detail");
+require 'config.php';
 
 
 //3 delete the particular record from id

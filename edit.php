@@ -1,6 +1,6 @@
 <?php
 //1
-$con=mysqli_connect("localhost","admin","password","detail");
+require 'config.php';
 
 // 2 fetch
 $id=$_GET['id'];
