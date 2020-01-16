@@ -32,7 +32,7 @@ class DB
      */
     function insert($table_name, $data)
     {
-        $return=false;
+        $return = false;
         $columns = join(',', array_keys($data));
 
         $values = array();
@@ -44,8 +44,8 @@ class DB
         $query = "insert into {$table_name}  ({$columns}) values($values) ";
         try {
             $this->db->query($query);
-            $return=true;
-        }catch(Exception $e){
+            $return = true;
+        } catch (Exception $e) {
 
         }
         return $return;
@@ -68,11 +68,34 @@ class DB
     function update($table_name, $data, $where)
     {
 
+        $data_to_update = array();
+        foreach ($data as $key => $val) {
+            $val = trim($val);
+            $data_to_update[] = "$key='$val'";
+        }
+        $data_to_update = join(',', $data_to_update);
+
+        $query = "update information set {$data_to_update} where {$where} ";
+        try {
+            $this->db->prepare($query)->execute();
+            $return = true;
+        } catch (Exception $e) {
+
+        }
+        return $return;
+
+
     }
+
+    function delete()
+    {
+
+    }
+
 
     function __destruct()
     {
-     $this->db=null;
+        $this->db = null;
     }
 
 }

@@ -1,26 +1,12 @@
 <?php
 
-//1
+require 'db.php';
+$db = new DB();
+
 $id=$_GET['id'];
 
-//2
-require 'config.php';
+$sql = "DELETE FROM information WHERE id=$id";
 
-
-//3 delete the particular record from id
-if($con)
-{
-
-    $q=mysqli_query($con,"delete from information where id='$id' ");
-    if($q)
-    {
-        echo header("location:listing.php");
-    }
-    else
-    {
-        echo mysqli_error($con);
-    }
-}
 
 
 ?>

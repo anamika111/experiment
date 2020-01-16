@@ -1,14 +1,11 @@
 <?php
 //1
-require 'config.php';
-
+require 'db.php';
+$db = new DB();
 // 2 fetch
 $id=$_GET['id'];
 
 // 3 fetch record from table
-$editquerry=mysqli_query($con,"select * from information where id='$id' ");
-$editdata=mysqli_fetch_array($editquerry);
-
 
 
 // 5 when page post method apply--insert
@@ -20,16 +17,28 @@ $contact=$_POST['contact'];
 $address=$_POST['address'];
 
 
-// 6 update the value
-    $q=mysqli_query($con,
-        "update information set id='$id',name='$name',email='$email',contact='$contact',address='$address'where id='$id' ");
-    if($q)
-    {
-        echo "<script> alert('Record updated');window.location='listing.php';</script>";
-    }
+$db->update('information',$_POST," id='$id'");
 
+
+
+//    $q= "update information set name='$name',email='$email',contact='$contact',address='$address'where id='$id' ";
+
+
+
+
+
+//    $is_updated=  $db->update('information',$_POST);
+//    if($is_updated){
+//      header("location: experiment.local/listing.php");
+//        echo "New records updated successfully";
+//    }else
+//    {
+//        echo "New records could not updatess";
+//    }
 }
-
+$editquerry="select * from information where id='$id' ";
+$res=$db->select($editquerry);
+$res=$res[0];
 ?>
 
 <!-- 4 html form-->
@@ -109,16 +118,16 @@ $address=$_POST['address'];
         <h1>Contact Form</h1>
 
         <label for="name"><b>Name</b></label>
-        <input type="text" placeholder="Enter name" name="name" value="<?php echo $editdata[1]; ?> "required>
+        <input type="text" placeholder="Enter name" name="name" value="<?php echo $res['name']; ?>"required>
 
         <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" name="email" value="<?php echo $editdata[2]; ?> "required>
+        <input type="text" placeholder="Enter Email" name="email" value="<?php echo $res['email']; ?>"required>
 
         <label for="contact"><b>Contact</b></label>
-        <input type="text" placeholder="Enter Contact Number" name="contact"  value="<?php echo $editdata[3]; ?> "required>
+        <input type="text" placeholder="Enter Contact Number" name="contact"  value="<?php echo $res['contact'];?>"required>
 
         <label for="address"><b>Address</b></label>
-        <input type="text" placeholder="Enter address" name="address" value="<?php echo $editdata[4]; ?> "required>
+        <input type="text" placeholder="Enter address" name="address" value="<?php echo $res['address'];; ?>"required>
         <hr>
 
 

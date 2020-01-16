@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c9fe9dea-3250-4053-9d9d-c463450f55d4" name="Default Changelist" comment="initial commit">
-      <change afterPath="$PROJECT_DIR$/.idea/experiment.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connect.php" beforeDir="false" afterPath="$PROJECT_DIR$/connect.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/contact.html" afterDir="false" />
+    <list default="true" id="c9fe9dea-3250-4053-9d9d-c463450f55d4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/db.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/delete.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/edit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/listing.php" beforeDir="false" afterPath="$PROJECT_DIR$/listing.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +39,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../saral-vastu-theme/wp-settings.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../saral-vastu-theme" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -79,7 +71,8 @@
       <option name="presentableId" value="Default" />
       <updated>1578891721643</updated>
       <workItem from="1578891723314" duration="14864000" />
-      <workItem from="1578976418713" duration="8092000" />
+      <workItem from="1578976418713" duration="8203000" />
+      <workItem from="1579149322186" duration="31586000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1578901835821</created>
@@ -88,7 +81,21 @@
       <option name="project" value="LOCAL" />
       <updated>1578901835821</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="initial commit">
+      <created>1579012248548</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1579012248548</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Using PDO Method">
+      <created>1579174477805</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1579174477805</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -96,17 +103,18 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="Using PDO Method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Using PDO Method" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="309" y="59" width="860" height="807" key="CommitChangelistDialog2" timestamp="1578909522345">
+    <state x="309" y="59" width="860" height="807" key="CommitChangelistDialog2" timestamp="1579174477482">
       <screen x="49" y="27" width="1391" height="873" />
     </state>
-    <state x="309" y="59" width="860" height="807" key="CommitChangelistDialog2/49.27.1391.873@49.27.1391.873" timestamp="1578909522345" />
-    <state x="527" y="220" width="424" height="484" key="FileChooserDialogImpl" timestamp="1578986741796">
+    <state x="309" y="59" width="860" height="807" key="CommitChangelistDialog2/49.27.1391.873@49.27.1391.873" timestamp="1579174477482" />
+    <state x="527" y="220" width="424" height="484" key="FileChooserDialogImpl" timestamp="1579176441995">
       <screen x="49" y="27" width="1391" height="873" />
     </state>
-    <state x="527" y="220" width="424" height="484" key="FileChooserDialogImpl/49.27.1391.873@49.27.1391.873" timestamp="1578986741796" />
+    <state x="527" y="220" width="424" height="484" key="FileChooserDialogImpl/49.27.1391.873@49.27.1391.873" timestamp="1579176441995" />
     <state x="540" y="388" width="399" height="149" key="NewPhpFileDialog" timestamp="1578986838046">
       <screen x="49" y="27" width="1391" height="873" />
     </state>
@@ -115,13 +123,21 @@
       <screen x="49" y="27" width="1391" height="873" />
     </state>
     <state x="233" y="97" key="SettingsEditor/49.27.1391.873@49.27.1391.873" timestamp="1578891728657" />
-    <state x="339" y="198" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1578918289167">
+    <state x="339" y="198" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1579174484511">
       <screen x="49" y="27" width="1391" height="873" />
     </state>
-    <state x="339" y="198" width="800" height="528" key="Vcs.Push.Dialog.v2/49.27.1391.873@49.27.1391.873" timestamp="1578918289167" />
+    <state x="339" y="198" width="800" height="528" key="Vcs.Push.Dialog.v2/49.27.1391.873@49.27.1391.873" timestamp="1579174484511" />
     <state x="0" y="27" width="868" height="873" key="find.popup" timestamp="1578985662883">
       <screen x="49" y="27" width="1391" height="873" />
     </state>
     <state x="0" y="27" width="868" height="873" key="find.popup/49.27.1391.873@49.27.1391.873" timestamp="1578985662883" />
+    <state x="408" y="208" key="run.anything.popup" timestamp="1579158484224">
+      <screen x="49" y="27" width="1391" height="873" />
+    </state>
+    <state x="408" y="208" key="run.anything.popup/49.27.1391.873@49.27.1391.873" timestamp="1579158484224" />
+    <state x="407" y="212" width="672" height="678" key="search.everywhere.popup" timestamp="1579184240779">
+      <screen x="49" y="27" width="1391" height="873" />
+    </state>
+    <state x="407" y="212" width="672" height="678" key="search.everywhere.popup/49.27.1391.873@49.27.1391.873" timestamp="1579184240779" />
   </component>
 </project>
