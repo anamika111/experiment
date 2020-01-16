@@ -1,27 +1,14 @@
 <?php
-$name=$_POST['name'];
-$email=$_POST['email'];
-$contact=$_POST['contact'];
-$address=$_POST['address'];
+require 'db.php';
+$db=new DB();
+  $is_inserted=  $db->insert('information',$_POST);
 
-
-require 'config.php';
-
-if($con === false){
-   // die("ERROR: Could not connect. " . mysqli_connect_error());
-}
-
-$q="INSERT INTO information (name, email,contact,address) VALUES ('$name', '$email', '$contact','$address')";
-
-
-if(mysqli_query($con, $q)){
-    echo "Records inserted successfully.";
-}
-else
-{
-   // echo "ERROR: Could not able to execute $q. " . mysqli_error($con);
-}
-mysqli_close($con);
-
+  if($is_inserted){
+//      header("location: experiment.local/listing.php");
+      echo "New records created successfully";
+  }else
+      {
+      echo "New records could not insert";
+  }
 
 ?>

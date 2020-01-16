@@ -1,16 +1,13 @@
 <?php
-require 'config.php';
+require 'db.php';
+$db = new DB();
 
-if ($con){
-
-$q = mysqli_query($con, "select * from information");
-
-if ($q)
-{
 ?>
+
 <html>
 <body>
 <table border=1px>
+    <thead>
     <tr>
         <th>Name</th>
         <th>Email</th>
@@ -20,25 +17,27 @@ if ($q)
         <th> Delete Action</th>
 
     </tr>
-
+    </thead>
+    <tbody>
     <?php
-    while ($arr = mysqli_fetch_array($q)) {
-        $id = $arr['id'];
+
+
+    foreach ($db->select("SELECT * from information") as $row) {
         ?>
         <tr>
-            <td><?= $arr['name'] ?></td>
-            <td><?= $arr['email'] ?></td>
-            <td><?= $arr['contact'] ?></td>
-            <td><?= $arr['address'] ?></td>
+            <td><?= $row['name'] ?></td>
+            <td><?= $row['email'] ?></td>
+            <td><?= $row['contact'] ?></td>
+            <td><?= $row['address'] ?></td>
             <td><a href='edit.php?id=<?php $id ?>'>edit</a></td>
             <td><a href='delete.php?id=<?php $id ?>'>Delete</a></td>
         </tr>
         <?php
+    }
 
-    }
-}
-    }
     ?>
+    </tbody>
+
 </table>
-        </body>
-        </html>
+</body>
+</html>
