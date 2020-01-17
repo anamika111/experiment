@@ -5,7 +5,9 @@ $db = new DB();
 
 $id=$_GET['id'];
 
-$sql = "DELETE FROM information WHERE id=$id";
+$db->delete('information',"id='$id' ");
+
+
 
 
 

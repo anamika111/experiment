@@ -76,6 +76,7 @@ class DB
         $data_to_update = join(',', $data_to_update);
 
         $query = "update information set {$data_to_update} where {$where} ";
+
         try {
             $this->db->prepare($query)->execute();
             $return = true;
@@ -87,8 +88,18 @@ class DB
 
     }
 
-    function delete()
+    function delete($table_name, $where)
     {
+
+        $query="delete from {$table_name} where {$where}";
+        try {
+            $this->db->query($query)->execute();
+            $return = true;
+        }
+        catch (Exception $e)
+        {
+
+        } return $return;
 
     }
 

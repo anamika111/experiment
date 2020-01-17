@@ -1,14 +1,14 @@
 <?php
-//1
+
 require 'db.php';
 $db = new DB();
-// 2 fetch
+
+
 $id=$_GET['id'];
 
-// 3 fetch record from table
 
 
-// 5 when page post method apply--insert
+
 if($_POST)
 {
 $name=$_POST['name'];
@@ -20,28 +20,18 @@ $address=$_POST['address'];
 $db->update('information',$_POST," id='$id'");
 
 
-
-//    $q= "update information set name='$name',email='$email',contact='$contact',address='$address'where id='$id' ";
-
-
-
-
-
-//    $is_updated=  $db->update('information',$_POST);
-//    if($is_updated){
-//      header("location: experiment.local/listing.php");
-//        echo "New records updated successfully";
-//    }else
-//    {
-//        echo "New records could not updatess";
-//    }
 }
 $editquerry="select * from information where id='$id' ";
 $res=$db->select($editquerry);
+
+if(empty($res))
+{
+    echo "record could not be found";
+    exit();
+}
 $res=$res[0];
 ?>
 
-<!-- 4 html form-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
