@@ -3,33 +3,41 @@
 require 'db.php';
 $db = new DB();
 
+$error = array();
+$id = $_GET['id'];
 
-$id=$_GET['id'];
+if (isset($_POST['name'])) {
+    if (empty($_POST['name'])) {
+        $error['name'] = "Name field should not be empty";
+    } else {
+        $matches = array();
+        preg_match_all('([0-9\%\@\#\&\*\$\+\-\=\.\`\~\,\;\^\(\)\[\]\{\}\?\<\>])', $_POST['name'], $matches);
+        if (!empty($matches[0])) {
+            $error['name'] = "Name field should not contain any digit(0-9) or special charcter";
+        }
+    }
+}
 
 
+if ($_POST && empty($error)) {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $contact = $_POST['contact'];
+    $address = $_POST['address'];
 
 
-if($_POST)
-{
-$name=$_POST['name'];
-$email=$_POST['email'];
-$contact=$_POST['contact'];
-$address=$_POST['address'];
-
-
-$db->update('information',$_POST," id='$id'");
+    $db->update('information', $_POST, " id='$id'");
 
 
 }
-$editquerry="select * from information where id='$id' ";
-$res=$db->select($editquerry);
+$editquerry = "select * from information where id='$id' ";
+$res = $db->select($editquerry);
 
-if(empty($res))
-{
+if (empty($res)) {
     echo "record could not be found";
     exit();
 }
-$res=$res[0];
+$res = $res[0];
 ?>
 
 <!DOCTYPE html>
@@ -56,7 +64,7 @@ $res=$res[0];
         input[type=text], input[type=password] {
             width: 100%;
             padding: 15px;
-            margin: 5px 0 22px 0;
+            margin: 5px 0 0 0;
             display: inline-block;
             border: none;
             background: #f1f1f1;
@@ -99,34 +107,69 @@ $res=$res[0];
             background-color: #f1f1f1;
             text-align: center;
         }
+
+        .text-error {
+            margin-top: 0;
+            padding: 0;
+            font-size: 12px;
+        }
     </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
-<body>
+<body class="bg-secondary pt-5">
+<div class="container bg-secondary">
+    <div class="row justify-content-md-center ">
+        <form method="post" class="col-md-6 bg-white">
+            <div class="container">
+                <h1>Contact Form</h1>
 
-<form method="post">
-    <div class="container">
-        <h1>Contact Form</h1>
+                <div class="form-group">
+                    <label for="name"><b>Name</b></label>
+                    <input class="form-control" type="text" placeholder="Enter name" name="name"
+                           value="<?php echo $res['name']; ?>" required>
+                    <?php
+                    if (isset($error['name'])) {
+                        ?>
+                        <p class="text-error text-danger"><?= $error['name'] ?></p>
+                    <?php } ?>
+                </div>
+                <div class="form-group">
+                    <label for="email"><b>Email</b></label>
+                    <input class="form-control" type="text" placeholder="Enter Email" name="email"
+                           value="<?php echo $res['email']; ?>" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact"><b>Contact</b></label>
+                    <input class="form-control" type="text" placeholder="Enter Contact Number" name="contact"
+                           value="<?php echo $res['contact']; ?>"
+                           required>
+                </div>
+                <div class="form-group">
+                    <label for="address"><b>Address</b></label>
+                    <input class="form-control" type="text" placeholder="Enter address" name="address"
+                           value="<?php echo $res['address'];; ?>"
+                           required>
+                </div>
+                <hr>
 
-        <label for="name"><b>Name</b></label>
-        <input type="text" placeholder="Enter name" name="name" value="<?php echo $res['name']; ?>"required>
 
-        <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" name="email" value="<?php echo $res['email']; ?>"required>
-
-        <label for="contact"><b>Contact</b></label>
-        <input type="text" placeholder="Enter Contact Number" name="contact"  value="<?php echo $res['contact'];?>"required>
-
-        <label for="address"><b>Address</b></label>
-        <input type="text" placeholder="Enter address" name="address" value="<?php echo $res['address'];; ?>"required>
-        <hr>
+                <button type="submit" class="registerbtn">Submit</button>
+            </div>
 
 
-        <button type="submit" class="registerbtn">Submit</button>
+        </form>
     </div>
-
-
-</form>
-
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 
 </body>
 </html>
