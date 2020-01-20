@@ -180,6 +180,7 @@ $res = $res[0];
                         <p class="text-error text-danger"><?= $error['name'] ?></p>
                     <?php }
 
+
                     ?>
                 </div>
 
@@ -207,7 +208,9 @@ $res = $res[0];
                     if (isset($error['contact'])) {
                         ?>
                         <p class="text-error text-danger"><?= $error['contact'] ?></p>
-                    <?php } ?>
+
+                    <?php }
+                   ?>
                 </div>
 
 
