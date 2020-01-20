@@ -35,17 +35,22 @@ if (isset($_POST['email'])) {
         }
     }
 }
-
+//$num[0] != 9 && $num[0] != 8 && $num[0] != 7))
 if(isset($_POST['contact'])) {
-    if (empty($_POST['contact'])) {
-        $error['contact'] = "Contact field should not be empty";
-    } else {
-        preg_match_all('(^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}$)', $_POST['contact'], $matches);
-        if (empty($matches[0])) {
-            $error['contact'] = "Number Should Start with 7,8,9 and enter only 10 digit number ";
+$num=$_POST['contact'];
+if((strlen($num)!=10))
+{
+    $error['contact'] = " number should be 10 digit";
+}
+elseif($num[0]!=9 && $num[0]!=8 && $num[0]!=7 && $num[0]!=6 ){
+    $error['contact'] = "Number Should start with 9 8 7 6";
+}
 
-        }
-    }
+
+
+
+
+
 }
 if (isset($_POST['address'])) {
     if (empty($_POST['address'])) {
@@ -54,11 +59,14 @@ if (isset($_POST['address'])) {
         preg_match_all('(^(\w*\s*[\-\,\/\.\(\)\&]*)+)', $_POST['address'], $matches);
         if (empty($matches[0])) {
             $error['address'] = "Please Enter valid address ";
+
         }
     }
+
 }
 
-if ($_POST && empty($error)) {
+if ($_POST && empty($error))
+{
     $name = $_POST['name'];
     $email = $_POST['email'];
     $contact = $_POST['contact'];
@@ -66,17 +74,16 @@ if ($_POST && empty($error)) {
 
 
     $db->update('information', $_POST, " id='$id'");
-
-
 }
 $editquerry = "select * from information where id='$id' ";
 $res = $db->select($editquerry);
-
 if (empty($res)) {
     echo "record could not be found";
     exit();
 }
 $res = $res[0];
+
+
 ?>
 
 <!DOCTYPE html>
@@ -171,7 +178,9 @@ $res = $res[0];
                     if (isset($error['name'])) {
                         ?>
                         <p class="text-error text-danger"><?= $error['name'] ?></p>
-                    <?php } ?>
+                    <?php }
+
+                    ?>
                 </div>
 
 
