@@ -4,20 +4,59 @@ require 'db.php';
 $db = new DB();
 
 $error = array();
+
 $id = $_GET['id'];
 
 if (isset($_POST['name'])) {
     if (empty($_POST['name'])) {
         $error['name'] = "Name field should not be empty";
     } else {
-        $matches = array();
+
         preg_match_all('([0-9\%\@\#\&\*\$\+\-\=\.\`\~\,\;\^\(\)\[\]\{\}\?\<\>])', $_POST['name'], $matches);
-        if (!empty($matches[0])) {
+
+        if (!empty($matches[0]))
+        {
             $error['name'] = "Name field should not contain any digit(0-9) or special charcter";
+        }
+
+    }
+}
+
+
+if (isset($_POST['email'])) {
+    if (empty($_POST['email'])) {
+        $error['email'] = "Email field should not be empty";
+    } else {
+        $matches = array();
+        preg_match_all('(([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,3})$)', $_POST['email'], $matches);
+        if (empty($matches[0])) {
+            $error['email'] = "Please enter valid email address (abc@gmail.com)";
+
         }
     }
 }
 
+if(isset($_POST['contact'])) {
+    if (empty($_POST['contact'])) {
+        $error['contact'] = "Contact field should not be empty";
+    } else {
+        preg_match_all('(^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}$)', $_POST['contact'], $matches);
+        if (empty($matches[0])) {
+            $error['contact'] = "Number Should Start with 7,8,9 and enter only 10 digit number ";
+
+        }
+    }
+}
+if (isset($_POST['address'])) {
+    if (empty($_POST['address'])) {
+        $error['address'] = "Address field should not be empty";
+    } else {
+        preg_match_all('(^(\w*\s*[\-\,\/\.\(\)\&]*)+)', $_POST['address'], $matches);
+        if (empty($matches[0])) {
+            $error['address'] = "Please Enter valid address ";
+        }
+    }
+}
 
 if ($_POST && empty($error)) {
     $name = $_POST['name'];
@@ -127,29 +166,54 @@ $res = $res[0];
                 <div class="form-group">
                     <label for="name"><b>Name</b></label>
                     <input class="form-control" type="text" placeholder="Enter name" name="name"
-                           value="<?php echo $res['name']; ?>" required>
+                           value="<?php echo $res['name']; ?>">
                     <?php
                     if (isset($error['name'])) {
                         ?>
                         <p class="text-error text-danger"><?= $error['name'] ?></p>
                     <?php } ?>
                 </div>
+
+
+
+
                 <div class="form-group">
                     <label for="email"><b>Email</b></label>
                     <input class="form-control" type="text" placeholder="Enter Email" name="email"
-                           value="<?php echo $res['email']; ?>" required>
+                           value="<?php echo $res['email']; ?>" >
+                    <?php
+                    if (isset($error['email'])) {
+                        ?>
+                        <p class="text-error text-danger"><?= $error['email'] ?></p>
+                    <?php } ?>
                 </div>
+
+
+
                 <div class="form-group">
                     <label for="contact"><b>Contact</b></label>
                     <input class="form-control" type="text" placeholder="Enter Contact Number" name="contact"
-                           value="<?php echo $res['contact']; ?>"
-                           required>
+                           value="<?php echo $res['contact']; ?>">
+                    <?php
+                    if (isset($error['contact'])) {
+                        ?>
+                        <p class="text-error text-danger"><?= $error['contact'] ?></p>
+                    <?php } ?>
                 </div>
+
+
+
+
+
                 <div class="form-group">
                     <label for="address"><b>Address</b></label>
                     <input class="form-control" type="text" placeholder="Enter address" name="address"
-                           value="<?php echo $res['address'];; ?>"
-                           required>
+                           value="<?php echo $res['address'];; ?>">
+                    <?php
+                    if (isset($error['address'])) {
+                        ?>
+                        <p class="text-error text-danger"><?= $error['address'] ?></p>
+                    <?php } ?>
                 </div>
                 <hr>
 
