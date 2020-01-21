@@ -5,6 +5,7 @@ $db = new DB();
 
 $error = array();
 
+
 $id = $_GET['id'];
 
 if (isset($_POST['name'])) {
@@ -40,7 +41,7 @@ if(isset($_POST['contact'])) {
 $num=$_POST['contact'];
 if((strlen($num)!=10))
 {
-    $error['contact'] = " number should be 10 digit";
+    $error['contact'] = "Please enter only number & number should be 10 digit";
 }
 elseif($num[0]!=9 && $num[0]!=8 && $num[0]!=7 && $num[0]!=6 ){
     $error['contact'] = "Number Should start with 9 8 7 6";
@@ -173,7 +174,7 @@ $res = $res[0];
                 <div class="form-group">
                     <label for="name"><b>Name</b></label>
                     <input class="form-control" type="text" placeholder="Enter name" name="name"
-                           value="<?php echo $res['name']; ?>">
+                           value="<?php echo(empty($error))?$res['name']:$_POST['name'] ?>">
                     <?php
                     if (isset($error['name'])) {
                         ?>
@@ -190,9 +191,10 @@ $res = $res[0];
                 <div class="form-group">
                     <label for="email"><b>Email</b></label>
                     <input class="form-control" type="text" placeholder="Enter Email" name="email"
-                           value="<?php echo $res['email']; ?>" >
+                           value="<?php echo (empty($error))?$res['email']:$_POST['email'] ?>" >
                     <?php
                     if (isset($error['email'])) {
+
                         ?>
                         <p class="text-error text-danger"><?= $error['email'] ?></p>
                     <?php } ?>
@@ -203,7 +205,7 @@ $res = $res[0];
                 <div class="form-group">
                     <label for="contact"><b>Contact</b></label>
                     <input class="form-control" type="text" placeholder="Enter Contact Number" name="contact"
-                           value="<?php echo $res['contact']; ?>">
+                           value="<?php echo(empty($error))? $res['contact']:$_POST['contact'] ?>">
                     <?php
                     if (isset($error['contact'])) {
                         ?>
@@ -220,7 +222,7 @@ $res = $res[0];
                 <div class="form-group">
                     <label for="address"><b>Address</b></label>
                     <input class="form-control" type="text" placeholder="Enter address" name="address"
-                           value="<?php echo $res['address'];; ?>">
+                           value="<?php echo (empty($error))?$res['address']:$_POST['address'] ?>">
                     <?php
                     if (isset($error['address'])) {
                         ?>
