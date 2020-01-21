@@ -39,12 +39,13 @@ if (isset($_POST['email'])) {
 //$num[0] != 9 && $num[0] != 8 && $num[0] != 7))
 if(isset($_POST['contact'])) {
 $num=$_POST['contact'];
-if((strlen($num)!=10))
-{
+if((strlen($num)!=10)) {
+
     $error['contact'] = "Please enter only number & number should be 10 digit";
+
 }
 elseif($num[0]!=9 && $num[0]!=8 && $num[0]!=7 && $num[0]!=6 ){
-    $error['contact'] = "Number Should start with 9 8 7 6";
+    $error['contact'] = "Please enter only number & number Should start with 9 8 7 6";
 }
 
 
